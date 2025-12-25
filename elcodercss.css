@@ -1,0 +1,85 @@
+ :root { 
+    --bg: #050505; 
+    --neon: #00d2ff; 
+    --glass: rgba(255, 255, 255, 0.04); 
+    --border: rgba(255, 255, 255, 0.1); 
+}
+
+/* خلفية متحركة احترافية */
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background: linear-gradient(45deg, #050505, #080d1a, #050505, #001a2e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.text-neon { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
+.py-100 { padding: 100px 0; }
+.fw-black { font-weight: 900; }
+
+/* Navbar */
+.glass-nav { 
+    background: rgba(5, 5, 5, 0.8) !important; 
+    backdrop-filter: blur(15px); 
+    border-bottom: 1px solid var(--border); 
+}
+.nav-link { color: white !important; }
+.btn-glow-nav { 
+    background: var(--neon); color: black !important; 
+    padding: 8px 20px; border-radius: 8px; font-weight: bold; text-decoration: none; 
+}
+
+/* Hero */
+.gradient-blue { background: linear-gradient(to right, #fff, var(--neon)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.btn-main-neon { background: var(--neon); color: black; padding: 14px 35px; border-radius: 12px; font-weight: 800; text-decoration: none; transition: 0.3s; display: inline-block; }
+.btn-outline-neon { border: 2px solid var(--neon); color: var(--neon); padding: 14px 35px; border-radius: 12px; text-decoration: none; transition: 0.3s; display: inline-block; }
+.floating-anim { animation: float 6s infinite ease-in-out; }
+
+/* Section Heads */
+.section-head h2 { position: relative; display: inline-block; padding-bottom: 15px; font-weight: 900; }
+.section-head h2::after { content: ''; position: absolute; width: 50%; height: 3px; background: var(--neon); bottom: 0; left: 25%; }
+
+/* Glass Cards */
+.feature-card, .testimonial-card, .pricing-glass { 
+    background: var(--glass) !important; 
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border) !important; 
+    padding: 40px; border-radius: 25px; transition: 0.4s; 
+}
+.feature-card:hover, .testimonial-card:hover { border-color: var(--neon) !important; transform: translateY(-10px); }
+.active-neon { border-color: var(--neon) !important; background: rgba(0,210,255,0.08) !important; }
+
+/* Portfolio */
+.work-box-ultra { position: relative; border-radius: 25px; overflow: hidden; height: 380px; background: #111; }
+.work-box-ultra img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+.work-info-overlay { 
+    position: absolute; inset: 0; background: linear-gradient(to top, black, transparent); 
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; opacity: 0; transition: 0.4s; 
+}
+.work-box-ultra:hover .work-info-overlay { opacity: 1; }
+
+/* Testimonials & Pricing */
+.client-img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--neon); object-fit: cover; }
+.featured-testimonial { background: var(--neon) !important; color: black; }
+.featured-price { border-color: var(--neon) !important; transform: scale(1.05); }
+.pop-tag { 
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%); 
+    background: var(--neon); color: black; padding: 4px 20px; border-radius: 20px; font-size: 12px; font-weight: bold; 
+}
+.price-val { font-size: 3.5rem; margin: 25px 0; font-weight: 900; }
+
+/* Footer */
+.footer-ultra { border-top: 1px solid var(--border); }
+.social-links a { color: white; margin: 0 15px; font-size: 1.5rem; }
+
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
